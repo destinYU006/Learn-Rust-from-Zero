@@ -5,6 +5,11 @@
 // Execute `rustlings hint clippy3` or use the `hint` watch subcommand for a hint.
 
 // I AM NOT DONE
+// unused_variables：在变量被声明之后却没有被使用的情况下，抑制相应警告。
+// unused_assignments：当变量被赋值后却没有被读取时，抑制由此产生的警告
+// #[allow(unused_mut)]：抑制未使用的可变变量警告。
+// #[allow(dead_code)]：抑制未使用的函数或者代码块警告。
+// #[allow(unused_imports)]：抑制未使用的导入模块警告。
 
 #[allow(unused_variables, unused_assignments)]
 fn main() {
