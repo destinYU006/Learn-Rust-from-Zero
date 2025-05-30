@@ -63,4 +63,26 @@ fn some_function<T,U>(t:&T,u:&U)->i32
     
   }
 //     054- 使用特征约束有条件的实现方法和特征
-
+use std::fmt::Display;
+struct Pair<T>{
+  y:T,
+  x:T,
+}
+// 实现结构体泛型方法
+impl<T> Pair<T>{
+  fn new(x:T,y:T) ->Self {
+    Self {
+      x,
+      y,
+    }
+  }
+}
+impl<T:Display + partialOrd>  Pair<T>{
+  fn cmp_display(&self){
+    if self.x >= self.y{
+      println!("The largest member is x = {}", self.x);
+    }else{
+      println!("The largest member is y = {}", self.y);
+    }
+  }
+}
