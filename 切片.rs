@@ -52,3 +52,7 @@ Struct Config{
 //       3. 性能优化：
 //           虽然clone()会深拷贝字符串数据，但是在实际应用中，String本身已经是堆分配的，克隆是不可避免的。
 
+//   关键问题：为什么用 args[1].clone() 而非 &args[1]？
+//   Config 的字段是 String（拥有所有权），而非 &str（借用）。
+//   若使用 &args[1]，则需要将 Config 的字段改为 &String 或 &str，但这会导致 Config 依赖外部 String 的生命周期，可能引发悬垂引用。
+//   通过 clone()，Config 拥有独立的 String 实例，不依赖外部数据的生命周期，更安全。
