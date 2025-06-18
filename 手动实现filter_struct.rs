@@ -56,3 +56,4 @@ fn main() {
 //     1. self 和Self的区别？
 //     2. 闭包函数是什么？怎么使用？常用知识点
 //     3. 需要从rust语法、编译器、内存操作、性能优化等角度详细分析，逐步绘制内存操作示意图。
+//    std::prelude 模块会自动被引入到每个 Rust 程序里，像 Iterator、Option、Result 等常见的 trait 和类型都包含其中
